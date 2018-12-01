@@ -1,0 +1,12 @@
+# Binaries
+**/*.out
+
+# Handout
+**/Handout.pdf
+
+# VSCode
+.vscode/**
+
+# System Files
+**/.DS_Store
+**/._*
