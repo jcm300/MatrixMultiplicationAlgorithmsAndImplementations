@@ -3,13 +3,13 @@
 #define N 50
 
 // dot product of two matrices a and b, result saved in matrix c
-void dotProduct(float **c, float **a, float **b, int n){
+void dotProduct(float *c, float *a, float *b, int n){
 
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
-            c[i][j] = 0;
+            *(c+i*n+j) = 0;
             for(int k = 0; k < n; k++){
-                c[i][j] += a[i][k] * b[k][j];
+                *(c+i*n+j) += *(a+i*n+k) * *(b+k*n+j);
             }       
         }   
     }   
@@ -32,7 +32,7 @@ int main(){
         for(int j = 0; j < N; j++)
             b[i][j] = 1;
 
-    dotProduct(c,a,b,N);
+    dotProduct(&(c[0][0]),&(a[0][0]),&(b[0][0]),N);
 
     return 0;
 }
