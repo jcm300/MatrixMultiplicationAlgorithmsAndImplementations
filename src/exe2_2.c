@@ -17,22 +17,27 @@ void dotProduct(float **c, float **a, float **b, int n){
 
 //main function
 int main(){
-    unsigned seed;
-    float **a = (float**)malloc(sizeof(float)*N*N);
-    float **b = (float**)malloc(sizeof(float)*N*N);
-    float **c = (float**)malloc(sizeof(float)*N*N);
+    unsigned seed=0;
+    float **a = (float**)malloc(sizeof(float*)*N);
+    float **b = (float**)malloc(sizeof(float*)*N);
+    float **c = (float**)malloc(sizeof(float*)*N);
 
     srand(seed);
 
     //build matrix A with random values
-    for(int i = 0; i < N; i++)
+    for(int i = 0; i < N; i++){
+        c[i] = (float*) malloc(sizeof(float)*N);
+        a[i] = (float*) malloc(sizeof(float)*N);
         for(int j = 0; j < N; j++)
             a[i][j] = rand();
+    }
 
     //build matrix B with all elements equals to 1
-    for(int i = 0; i < N; i++)
+    for(int i = 0; i < N; i++){
+        b[i] = (float*) malloc(sizeof(float)*N);
         for(int j = 0; j < N; j++)
             b[i][j] = 1;
+    }
 
     dotProduct(c,a,b,N);
 
