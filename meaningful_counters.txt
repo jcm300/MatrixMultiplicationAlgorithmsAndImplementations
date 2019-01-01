@@ -1,31 +1,8 @@
---------------------------------------------------------------------------------
-PAPI Version             : 5.5.0.0
-Vendor string and code   : GenuineIntel (1)
-Model string and code    : Intel(R) Xeon(R) CPU E5-2695 v2 @ 2.40GHz (62)
-CPU Revision             : 4.000000
-CPUID Info               : Family: 6  Model: 62  Stepping: 4
-CPU Max Megahertz        : 2401
-CPU Min Megahertz        : 1200
-Hdw Threads per core     : 2
-Cores per Socket         : 12
-Sockets                  : 2
-NUMA Nodes               : 2
-CPUs per Node            : 24
-Total CPUs               : 48
-Running in a VM          : no
-Number Hardware Counters : 11
-Max Multiplex Counters   : 32
---------------------------------------------------------------------------------
-
-================================================================================
   PAPI Preset Events
 ================================================================================
     Name        Code    Avail Deriv Description (Note)
 PAPI_L1_DCM  0x80000000  Yes   No   Level 1 data cache misses
-PAPI_L1_ICM  0x80000001  Yes   No   Level 1 instruction cache misses
 PAPI_L2_DCM  0x80000002  Yes   Yes  Level 2 data cache misses
-PAPI_L2_ICM  0x80000003  Yes   No   Level 2 instruction cache misses
-PAPI_L1_TCM  0x80000006  Yes   Yes  Level 1 cache misses
 PAPI_L2_TCM  0x80000007  Yes   No   Level 2 cache misses
 PAPI_L3_TCM  0x80000008  Yes   No   Level 3 cache misses
 PAPI_L1_LDM  0x80000017  Yes   No   Level 1 load misses
@@ -35,24 +12,8 @@ PAPI_TOT_INS 0x80000032  Yes   No   Instructions completed
 PAPI_FP_INS  0x80000034  Yes   Yes  Floating point instructions
 PAPI_LD_INS  0x80000035  Yes   No   Load instructions
 PAPI_SR_INS  0x80000036  Yes   No   Store instructions
-PAPI_TOT_CYC 0x8000003b  Yes   No   Total cycles
 PAPI_L2_DCH  0x8000003f  Yes   Yes  Level 2 data cache hits
 PAPI_L2_DCA  0x80000041  Yes   No   Level 2 data cache accesses
 PAPI_L3_DCA  0x80000042  Yes   Yes  Level 3 data cache accesses
-PAPI_L2_DCR  0x80000044  Yes   No   Level 2 data cache reads
-PAPI_L3_DCR  0x80000045  Yes   No   Level 3 data cache reads
-PAPI_L2_DCW  0x80000047  Yes   No   Level 2 data cache writes
-PAPI_L3_DCW  0x80000048  Yes   No   Level 3 data cache writes
-PAPI_L2_ICH  0x8000004a  Yes   No   Level 2 instruction cache hits
-PAPI_L2_ICA  0x8000004d  Yes   No   Level 2 instruction cache accesses
-PAPI_L3_ICA  0x8000004e  Yes   No   Level 3 instruction cache accesses
-PAPI_L2_ICR  0x80000050  Yes   No   Level 2 instruction cache reads
-PAPI_L3_ICR  0x80000051  Yes   No   Level 3 instruction cache reads
-PAPI_L2_TCA  0x80000059  Yes   Yes  Level 2 total cache accesses
 PAPI_L3_TCA  0x8000005a  Yes   No   Level 3 total cache accesses
-PAPI_L2_TCR  0x8000005c  Yes   Yes  Level 2 total cache reads
-PAPI_L3_TCR  0x8000005d  Yes   Yes  Level 3 total cache reads
-PAPI_L2_TCW  0x8000005f  Yes   No   Level 2 total cache writes
-PAPI_L3_TCW  0x80000060  Yes   No   Level 3 total cache writes
-PAPI_FP_OPS  0x80000066  Yes   Yes  Floating point operations
 PAPI_VEC_SP  0x80000069  Yes   Yes  Single precision vector/SIMD instructions
