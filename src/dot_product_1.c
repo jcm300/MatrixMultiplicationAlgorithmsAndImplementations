@@ -1,5 +1,3 @@
-#include<stdio.h>
-#include <stdlib.h>
 #include "testing_utils.h"
 
 // dot product of two matrices a and b, result saved in matrix c
@@ -42,7 +40,7 @@ int main(){
 
     start();
     dotProduct(c,a,b,N);
-    printf("%llu", stop());
+    printf("%llu\n", stop());
 
     return 0;
 }

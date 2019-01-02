@@ -1,5 +1,3 @@
-#include<stdio.h>
-#include<stdlib.h>
 #include "testing_utils.h"
 
 /*
@@ -57,5 +55,5 @@ int main(int argc, char *argv[]){
     transpose(b,N);
     start();
     dotProduct_RowOpt(c, a, b, N); 
-    printf("%llu", stop());
+    printf("%llu\n", stop());
 }

@@ -1,10 +1,21 @@
 #include "testing_utils.h"
 
+int Events[NUM_EVENTS]={PAPI_LD_INS,PAPI_SR_INS,PAPI_L1_LDM};
+//int Events[NUM_EVENTS]={PAPI_L2_STM,PAPI_L2_TCM};
+//int Events[NUM_EVENTS]={PAPI_L3_DCR,PAPI_L3_TCM};
+int retval;
+long long values[NUM_EVENTS];
+
 void dotProduct(float **c, float **a, float **b, int n){
+    
+    PAPI_start_counters(Events,NUM_EVENTS);
+
     for(int j=0; j < n; j++)
         for(int k=0; k < n; k++)
             for(int i=0; i < n; i++)
                 c[i][j] += a[i][k] * b[k][j]; 
+
+    retval = PAPI_stop_counters(values,NUM_EVENTS);
 }
 
 void printMatrix(float **m, int n){
@@ -38,4 +49,8 @@ int main(int argc, char *argv[]){
     start();
     dotProduct(c, a, b, N);
     printf("%llu\n", stop());
+
+    for(int i=0; i<NUM_EVENTS; i++){
+        printf("%lld\n",values[i]);
+    }
 }
