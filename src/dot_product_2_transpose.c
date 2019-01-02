@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#define N 4
+#include "testing_utils.h"
 
 /*
  * Perform dot product of two matrices
@@ -55,5 +55,7 @@ int main(int argc, char *argv[]){
 
     transpose(a,N);
     transpose(b,N);
+    start();
     dotProduct_RowOpt(c, a, b, N); 
+    printf("%llu", stop());
 }

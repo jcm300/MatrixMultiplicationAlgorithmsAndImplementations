@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-
-#define N 4
+#include "testing_utils.h"
 
 void dotProduct(float **c, float **a, float **b, int n){
     for(int j=0; j < n; j++)
@@ -38,6 +37,7 @@ int main(int argc, char *argv[]){
         for(int j = 0; j < N; j ++)
             b[i][j] = 1;
     }
-
+    start();
     dotProduct(c, a, b, N);
+    printf("%llu", stop());
 }

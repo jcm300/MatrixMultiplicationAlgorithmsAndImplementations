@@ -1,6 +1,6 @@
+#include<stdio.h>
 #include <stdlib.h>
-
-#define N 50
+#include "testing_utils.h"
 
 // dot product of two matrices a and b, result saved in matrix c
 void dotProduct(float **c, float **a, float **b, int n){
@@ -39,7 +39,9 @@ int main(){
             b[i][j] = 1;
     }
 
+    start();
     dotProduct(c,a,b,N);
+    printf("%llu", stop());
 
     return 0;
 }
