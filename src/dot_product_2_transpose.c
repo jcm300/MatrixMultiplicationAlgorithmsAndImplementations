@@ -1,7 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
-
 #define N 4
+
+/*
+ * Perform dot product of two matrices
+*/
 
 // Inplace transpose
 void transpose(float **m, int n){
@@ -12,15 +15,6 @@ void transpose(float **m, int n){
             m[i][j] = m[j][i];
             m[j][i] = temp;
         }
-}
-
-
-
-void dotProduct(float **c, float **a, float **b, int n){
-    for(int j=0; j < n; j++)
-        for(int k=0; k < n; k++)
-            for(int i=0; i < n; i++)
-                c[i][j] += a[i][k] * b[k][j]; 
 }
 
 void dotProduct_RowOpt(float **c, float **a, float **b, int n){
@@ -59,13 +53,6 @@ int main(int argc, char *argv[]){
             b[i][j] = 1;
     }
 
-    dotProduct(c, a, b, N);
-
-    //reset matrix
-    for(int i = 0; i < N; i ++){
-        for(int j = 0; j < N; j ++)
-            c[i][j] = 0.f;
-    }
     transpose(a,N);
     transpose(b,N);
     dotProduct_RowOpt(c, a, b, N); 

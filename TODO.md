@@ -4,7 +4,7 @@
 - [x] Barebones matrix dot product with no optimization
 - [x] Dot product with loop order: i-k-j (1)
 - [x] Dot product with loop order: k-j-i (2)
-- [ ] Validate matrix size
+- [x] Validate matrix size
 - [ ] Apply block optimization to code that requires RAM access
 - [ ] Vectorize code via compiler 
 - [ ] Multi-core vectorized code wihtout HT
@@ -14,15 +14,15 @@
     **n.b** adapt data structures to comply with cache sizes
 
 ## Report
-- [ ] Describe cluster hardware platform
+- [x] Describe cluster hardware platform
 - [x] Describe laptop hardware paltform
-- [ ] Roofline model for cluster node 662
+- [x] Roofline model for cluster node 662
 - [ ] Roofline model for laptop
     - [ ] Add ceilings according to matrix multiplication
 - [ ] PAPI performance counters
-- [ ] Matrix size that fits in L1 cache of 662
-- [ ] Matrix size that fits in L2 cache of 662
-- [ ] Matrix size that fits in L3 cache of 662
+- [x] Matrix size that fits in L1 cache of 662
+- [x] Matrix size that fits in L2 cache of 662
+- [x] Matrix size that fits in L3 cache of 662
 - [ ] Measure execution times for dot-product function
     - [ ] Use K-best, with K=3 and sample size=8
 - [ ] Use PAPI data to analyze best execution time
@@ -41,7 +41,7 @@
     - [ ] Use K-best, with K=3 and sample size=8
 - [ ] Measure execution times for multi-core vectorized dot-product
     - [ ] Use K-best, with K=3 and sample size=8
-- Complement table with:
+- [ ] Complement table with:
     - [ ] Data transfer times between the CPU-device 
     - [ ] Accelerator-CPU
-    only for the larger data set
+    only for the largest data set
