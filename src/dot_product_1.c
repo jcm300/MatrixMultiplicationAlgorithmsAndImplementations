@@ -14,18 +14,12 @@ void dotProduct(float **c, float **a, float **b, int n){
 
 // dot product of two matrices with block optimization
 void dotProductBlockOptimized(float **c, float **a, float **b, int n){
-    int blocksize = 10;
-    double sum;
-
-    for(int j_block = 0; j_block < n; j_block += blocksize)
-        for(int k_block = 0; k_block < n; k_block += blocksize)
+    for(int j_block = 0; j_block < n; j_block += BLOCK_SIZE)
+        for(int k_block = 0; k_block < n; k_block += BLOCK_SIZE)
             for(int i = 0; i < n; i ++)
-                for(int j = j_block; j < j_block+blocksize; j ++){
-                    sum = 0.f;
-                    for(int k = k_block; k < k_block+blocksize; k ++)
-                        sum += a[i][k] * b[k][j];
-                    c[i][j] += sum;
-                }
+                for(int k = k_block; k < k_block+BLOCK_SIZE; k ++)
+                    for(int j = j_block; j < j_block+BLOCK_SIZE; j ++)
+                        c[i][j] +=  a[i][k] * b[k][j];
 }
 
 //main function
@@ -53,10 +47,11 @@ int main(){
         for(int j = 0; j < N; j++)
             b[i][j] = 1;
     }
-
-    /*start();
+    /*
+    start();
     dotProduct(c,a,b,N);
-    printf("%llu usecs \n", stop());*/
+    printf("%llu usecs \n", stop());
+    */
 
     start();
     dotProductBlockOptimized(c,a,b,N);

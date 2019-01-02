@@ -1,15 +1,15 @@
 CC=gcc
-CFLAGS=-O2 -std=c99 -L/share/apps/papi/5.5.0/lib -I/share/apps/papi/5.5.0/include -lpapi
+CFLAGS=-O2 -std=c99 #-L/share/apps/papi/5.5.0/lib -I/share/apps/papi/5.5.0/include -lpapi
 SRC_DIR=src
 BIN_DIR=bin
-#DP=dot_product
-DP=dot_product_with_counters
-#DP_1=dot_product_1
-DP_1=dot_product_1_with_counters
-#DP_2_NT=dot_product_2_no_transpose
-DP_2_NT=dot_product_2_no_transpose_with_counters
-#DP_2_T=dot_product_2_transpose
-DP_2_T=dot_product_2_transpose_with_counters
+DP=dot_product
+#DP=dot_product_with_counters
+DP_1=dot_product_1
+#DP_1=dot_product_1_with_counters
+DP_2_NT=dot_product_2_no_transpose
+#DP_2_NT=dot_product_2_no_transpose_with_counters
+DP_2_T=dot_product_2_transpose
+#DP_2_T=dot_product_2_transpose_with_counters
 DEPS=testing_utils
 OS:= $(shell uname -s)
 

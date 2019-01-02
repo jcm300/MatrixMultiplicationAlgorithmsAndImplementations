@@ -15,17 +15,30 @@ void transpose(float **m, int n){
         }
 }
 
-void dotProduct_RowOpt(float **c, float **a, float **b, int n){
+void dotProduct(float **c, float **a, float **b, int n){
     for(int j=0; j < n; j++)
         for(int k=0; k < n; k++)
             for(int i=0; i < n; i++)
                 c[i][j] += a[k][i] * b[j][k]; 
 }
 
+
+// dot product of two matrices with block optimization
+void dotProductBlockOptimized(float **c, float **a, float **b, int n){
+    for(int j_block = 0; j_block < n; j_block += BLOCK_SIZE)
+        for(int k_block = 0; k_block < n; k_block += BLOCK_SIZE)
+            for(int j = j_block; j < j_block+BLOCK_SIZE; j ++)
+                for(int k = k_block; k < k_block+BLOCK_SIZE; k ++)
+                    for(int i = 0; i < n; i ++)
+                        c[i][j] += a[k][i] * b[j][k];
+}
+
 void printMatrix(float **m, int n){
     for(int i=0; i<n; i++){
-        for(int j=0;j<n;j++)
-            printf("%f ", m[i][j]);
+        for(int j=0;j<n;j++){
+            printf("%.5f ", m[i][j]);
+            m[i][j] = 0.f;
+        }
         printf("\n");
     }
 }
@@ -53,8 +66,13 @@ int main(int argc, char *argv[]){
 
     transpose(a,N);
     transpose(b,N);
+    /*
     start();
-    dotProduct_RowOpt(c, a, b, N); 
-    
+    dotProduct(c, a, b, N); 
+    printf("%llu usecs \n", stop());
+    */
+
+    start();
+    dotProductBlockOptimized(c,a,b,N);
     printf("%llu usecs \n", stop());
 }
