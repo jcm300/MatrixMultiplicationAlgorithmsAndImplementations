@@ -35,7 +35,8 @@ int main(int argc, char *argv[]){
         for(int j = 0; j < N; j ++)
             b[i][j] = 1;
     }
+    
     start();
     dotProduct(c, a, b, N);
-    printf("%llu\n", stop());
+    printf("%llu usecs \n", stop());
 }
