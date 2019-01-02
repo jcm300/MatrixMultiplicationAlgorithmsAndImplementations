@@ -1,4 +1,5 @@
 #include "testing_utils.h"
+#include <stdlib.h>
 
 long long unsigned initial_time;
 struct timeval t;
