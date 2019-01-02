@@ -31,7 +31,7 @@
 - [ ] For each data set size:
     - [ ] Estimate number of FP op's for each implementation
     - [ ] Plot achieved performance in roofline model
-    - [ ] miss rate on memory reads for each cache: L1, L2, L3
+    - [ ] miss rate on memory reads for each cache: L1, L2, L3
 - [ ] Interpret obtained results
     - [ ] CPU bound or memory bandwidth bound
     - [ ] Performance bottlenecks
