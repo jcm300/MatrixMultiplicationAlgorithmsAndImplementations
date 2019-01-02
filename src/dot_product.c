@@ -41,7 +41,7 @@ int main(){
 
     start();
     dotProduct(c,a,b,N);
-    printf("%llu", stop());
+    printf("%llu usecs \n", stop());
 
     return 0;
 }

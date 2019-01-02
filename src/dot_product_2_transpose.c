@@ -57,5 +57,5 @@ int main(int argc, char *argv[]){
     transpose(b,N);
     start();
     dotProduct_RowOpt(c, a, b, N); 
-    printf("%llu", stop());
+    printf("%llu usecs \n", stop());
 }
