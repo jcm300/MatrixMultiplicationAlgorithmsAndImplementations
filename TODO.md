@@ -23,8 +23,8 @@
 - [x] Matrix size that fits in L1 cache of 662
 - [x] Matrix size that fits in L2 cache of 662
 - [x] Matrix size that fits in L3 cache of 662
-- [ ] Measure execution times for dot-product function
-    - [ ] Use K-best, with K=3 and sample size=8
+- [x] Measure execution times for dot-product function
+    - [x] Use K-best, with K=3 and sample size=8
 - [ ] Use PAPI data to analyze best execution time
     - [ ] Estimate: RAM accesses per instruction; bytes transferred to/from the RAM, with and without transposed matrices
     - [ ] Confirm values with PAPI
