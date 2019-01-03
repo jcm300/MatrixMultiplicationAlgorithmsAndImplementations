@@ -1,5 +1,5 @@
-CC=gcc
-CFLAGS=-O2 -std=c99
+CC=icpc
+CFLAGS=-O2 -qopt-report=3 -qopenmp
 SRC_DIR=src
 BIN_DIR=bin
 DP=dot_product

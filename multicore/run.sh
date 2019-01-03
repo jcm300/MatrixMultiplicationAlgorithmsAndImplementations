@@ -6,7 +6,7 @@
 #PBS -q mei
 
 module load gcc/5.3.0
-#module load gcc/7.2.0
+source /share/apps/intel/parallel_studio_xe_2019/compilers_and_libraries_2019/linux/bin/compilervars.sh intel64
 
 cd teste
 rm Teste.*

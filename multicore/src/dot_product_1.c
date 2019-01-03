@@ -2,7 +2,10 @@
 
 // dot product of two matrices with block optimization
 void dotProductBlockOptimized(float ** __restrict__ c, float ** __restrict__ a, float ** __restrict__ b, int n){
+    
+    omp_set_num_threads(12);
 
+    #pragma omp parallel for
     for(int j_block = 0; j_block < n; j_block += BLOCK_SIZE)
         for(int k_block = 0; k_block < n; k_block += BLOCK_SIZE)
             for(int i = 0; i < n; i ++)
