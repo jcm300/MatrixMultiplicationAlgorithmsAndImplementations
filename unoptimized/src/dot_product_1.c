@@ -54,13 +54,13 @@ int main(){
             b[i][j] = 1;
     }
 
-    /*start();
+    //start();
     dotProduct(c,a,b,N);
-    printf("%llu usecs \n", stop());*/
-
-    start();
-    dotProductBlockOptimized(c,a,b,N);
-    printf("%llu usecs \n", stop());
-
+    //printf("%llu usecs \n", stop());
+    
+    //start();
+    //dotProductBlockOptimized(c,a,b,N);
+    //printf("%llu usecs \n", stop());
+    
     return 0;
 }
