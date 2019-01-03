@@ -5,9 +5,9 @@ void dotProductBlockOptimized(float ** __restrict__ c, float ** __restrict__ a, 
     
     omp_set_num_threads(12);
 
-    #pragma omp parallel for
     for(int j_block = 0; j_block < n; j_block += BLOCK_SIZE)
         for(int k_block = 0; k_block < n; k_block += BLOCK_SIZE)
+            #pragma omp parallel for
             for(int i = 0; i < n; i ++)
                 for(int k = k_block; k < k_block+BLOCK_SIZE; k ++){
                     for(int j = j_block; j < j_block+BLOCK_SIZE; j ++)
