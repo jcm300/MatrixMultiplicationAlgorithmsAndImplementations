@@ -5,7 +5,7 @@
 - [x] Dot product with loop order: i-k-j (1)
 - [x] Dot product with loop order: k-j-i (2)
 - [x] Validate matrix size
-- [ ] Apply block optimization to code that requires RAM access
+- [x] Apply block optimization to code that requires RAM access
 - [ ] Vectorize code via compiler 
 - [ ] Multi-core vectorized code wihtout HT
 - [ ] Adapt code (1 or 2) to run in

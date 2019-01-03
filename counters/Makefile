@@ -3,7 +3,7 @@ CFLAGS=-O2 -std=c99 -L/share/apps/papi/5.5.0/lib -I/share/apps/papi/5.5.0/includ
 SRC_DIR=src
 BIN_DIR=bin
 DP=dot_product
-DP_1=dot_product
+DP_1=dot_product_1
 DP_2_NT=dot_product_2_no_transpose
 DP_2_T=dot_product_2_transpose
 DEPS=testing_utils

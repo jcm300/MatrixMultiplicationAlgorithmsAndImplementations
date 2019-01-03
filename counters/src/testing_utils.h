@@ -3,8 +3,8 @@
 #include<stdlib.h>
 #include <papi.h>
 
+#define N 500
 #define TIME_RESOLUTION 1000000
-#define N 20
 #define NUM_EVENTS 3
 
 void start (void);
