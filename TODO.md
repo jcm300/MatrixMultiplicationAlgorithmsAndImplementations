@@ -6,8 +6,8 @@
 - [x] Dot product with loop order: k-j-i (2)
 - [x] Validate matrix size
 - [x] Apply block optimization to code that requires RAM access
-- [ ] Vectorize code via compiler 
-- [ ] Multi-core vectorized code wihtout HT
+- [x] Vectorize code via compiler 
+- [x] Multi-core vectorized code wihtout HT
 - [ ] Adapt code (1 or 2) to run in
     - [ ] all SMX of a Kepler GPU
     - [ ] all cores of an Intel Knights Landing
@@ -37,10 +37,10 @@
     - [ ] Performance bottlenecks
     - [ ] ...
 - [ ] Describe benefits of block optimization
-- [ ] Measure execution times for vectorized dot-product
-    - [ ] Use K-best, with K=3 and sample size=8
-- [ ] Measure execution times for multi-core vectorized dot-product
-    - [ ] Use K-best, with K=3 and sample size=8
+- [x] Measure execution times for vectorized dot-product
+    - [x] Use K-best, with K=3 and sample size=8
+- [x] Measure execution times for multi-core vectorized dot-product
+    - [x] Use K-best, with K=3 and sample size=8
 - [ ] Complement table with:
     - [ ] Data transfer times between the CPU-device 
     - [ ] Accelerator-CPU
