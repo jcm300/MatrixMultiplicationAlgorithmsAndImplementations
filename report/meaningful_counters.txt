@@ -17,4 +17,3 @@ PAPI_L2_DCA  0x80000041  Yes   No   Level 2 data cache accesses
 PAPI_L3_DCA  0x80000042  Yes   Yes  Level 3 data cache accesses
 PAPI_L3_TCA  0x8000005a  Yes   No   Level 3 total cache accesses
 PAPI_L3_DCW  0x80000048  Yes   No   Level 3 data cache writes
-PAPI_VEC_SP  0x80000069  Yes   Yes  Single precision vector/SIMD instructions
