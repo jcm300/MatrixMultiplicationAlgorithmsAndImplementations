@@ -41,6 +41,7 @@ __global__ void matrixKernel (float *dev_m1, float *dev_m2, float *dev_result) {
 
 void gpuMatrixMult (float *m1, float *m2, float *result) {
 	float *dev_m1, *dev_m2, *dev_result;
+    long long unsigned stopHostToGPU, beginGPUtoHost, allTime;
 
 	cudaMalloc((void**) &dev_m1,N * N * sizeof(float));
 	cudaMalloc((void**) &dev_m2,N * N * sizeof(float));
@@ -48,17 +49,25 @@ void gpuMatrixMult (float *m1, float *m2, float *result) {
     
 	//startTime
 	start();
-	
+
+
     cudaMemcpy(dev_m1, m1, N * N * sizeof(float), cudaMemcpyHostToDevice);
 	cudaMemcpy(dev_m2, m2, N * N * sizeof(float), cudaMemcpyHostToDevice);
+    
+    stopHostToGPU = stop();
 
 	matrixKernel <<< NUM_THREADS_PER_BLOCK, NUM_BLOCKS >>>(dev_m1, dev_m2, dev_result);
     
+    beginGPUtoHost = stop();
+
 	// copy the output to the host
     cudaMemcpy(result, dev_result, N * N * sizeof(float), cudaMemcpyDeviceToHost);
     
+    allTime = stop();
 	//stopTime
-	printResults(stop());
+	printResults(allTime);
+    //transfer time
+    printResults(allTime-beginGPUtoHost+stopHostToGPU);
 
 	// free the device memory
 	cudaFree(dev_m1);
