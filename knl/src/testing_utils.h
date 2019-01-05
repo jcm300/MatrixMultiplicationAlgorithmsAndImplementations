@@ -5,7 +5,7 @@
 //#include <papi.h>
 
 #define N 2048
-#define BLOCK_SIZE 4
+#define BLOCK_SIZE 32
 
 #define TIME_RESOLUTION 1000000
 
