@@ -1,8 +1,9 @@
 #include "testing_utils.h"
 
-int Events[NUM_EVENTS]={PAPI_LD_INS,PAPI_SR_INS,PAPI_L1_LDM};
-//int Events[NUM_EVENTS]={PAPI_L2_STM,PAPI_L2_TCM};
+int Events[NUM_EVENTS]={PAPI_L1_LDM,PAPI_L1_DCM};
+//int Events[NUM_EVENTS]={PAPI_L2_STM,PAPI_L2_DCM};
 //int Events[NUM_EVENTS]={PAPI_L3_DCR,PAPI_L3_TCM};
+//int Events[NUM_EVENTS]={PAPI_L3_ICA,PAPI_L3_ICR};
 int retval;
 long long values[NUM_EVENTS];
 
