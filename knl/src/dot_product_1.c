@@ -1,22 +1,13 @@
 #include "testing_utils.h"
 
-
-void tileMult(float **a, float **b, float **c){
-    for(int i = 0; i < BLOCK_SIZE; i ++)
-        for(int j = 0; j < BLOCK_SIZE; j ++)
-            for(int k = 0; k < BLOCK_SIZE; k ++)
-                c[i][j] +=  a[i][k] * b[k][j];
-}
-
 // dot product of two matrices with block optimization
 void dotProductBlockOptimized(float ** __restrict__ c, float ** __restrict__ a, float ** __restrict__ b, int n){
     
-    #pragma omp parallel for
     for(int j_block = 0; j_block < n; j_block += BLOCK_SIZE)
         for(int k_block = 0; k_block < n; k_block += BLOCK_SIZE)
+            #pragma omp parallel for num_threads(64)
             for(int i = 0; i < n; i ++)
                 for(int k = k_block; k < k_block+BLOCK_SIZE; k ++){
-                    #pragma omp parallel for num_threads(64)
                     for(int j = j_block; j < j_block+BLOCK_SIZE; j ++)
                         c[i][j] +=  a[i][k] * b[k][j];
                 }

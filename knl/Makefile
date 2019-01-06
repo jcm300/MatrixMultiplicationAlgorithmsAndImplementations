@@ -1,5 +1,5 @@
-CC=gcc
-CFLAGS=-O2 -std=c99
+CC=icc
+CFLAGS=-O2 -std=c99 -qopenmp -march=knl
 SRC_DIR=src
 BIN_DIR=bin
 DP=dot_product
@@ -31,7 +31,7 @@ $(BIN_DIR)/$(DP_2_T): $(SRC_DIR)/$(DP_2_T).c $(DEPS)
 checkdirs:
 	@mkdir -p $(BIN_DIR)
 
-all: checkdirs $(BIN_DIR)/$(DP) $(BIN_DIR)/$(DP_1) $(BIN_DIR)/$(DP_2_NT) $(BIN_DIR)/$(DP_2_T) 
+all: checkdirs $(BIN_DIR)/$(DP_1)
 
 clean:
 	rm -rf $(BIN_DIR)/

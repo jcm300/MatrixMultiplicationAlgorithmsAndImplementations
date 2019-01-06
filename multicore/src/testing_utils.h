@@ -3,8 +3,8 @@
 #include<stdlib.h>
 #include<omp.h>
 
-#define N 512
-#define BLOCK_SIZE 4
+#define N 2048
+#define BLOCK_SIZE 32
 
 #define TIME_RESOLUTION 1000000
 
