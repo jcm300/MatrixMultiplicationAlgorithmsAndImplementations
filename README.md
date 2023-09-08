@@ -10,3 +10,5 @@ The findings and techniques are described in a report aswell as the context in w
 were performed.
 Project developed in a Masters in Computer Engineering at Universidade do Minho for the Advanced Architecures
 class.
+
+For more information you can have a look [here](report/OptimizationReport.pdf).
